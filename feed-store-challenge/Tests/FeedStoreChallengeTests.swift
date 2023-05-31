@@ -99,75 +99,75 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 
 	func test_delete_deliversNoErrorOnEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
 	}
 
 	func test_delete_hasNoSideEffectsOnEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
 	}
 
 	func test_delete_deliversNoErrorOnNonEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
 	}
 
 	func test_delete_emptiesPreviouslyInsertedCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
 	}
 
 	func test_delete_deliversErrorOnDeletionError() throws {
-//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
-//		let feed = uniqueImageFeed()
-//		let timestamp = Date()
-//		let sut = try makeSUT()
-//
-//		insert((feed, timestamp), to: sut)
-//
-//		stub.startIntercepting()
-//
-//		let deletionError = deleteCache(from: sut)
-//
-//		XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
+		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+		let feed = uniqueImageFeed()
+		let timestamp = Date()
+		let sut = try makeSUT()
+
+		insert((feed, timestamp), to: sut)
+
+		stub.startIntercepting()
+
+		let deletionError = deleteCache(from: sut)
+
+		XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
 	}
 
 	func test_delete_hasNoSideEffectsOnDeletionError() throws {
-//		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
-//		let feed = uniqueImageFeed()
-//		let timestamp = Date()
-//		let sut = try makeSUT()
-//
-//		insert((feed, timestamp), to: sut)
-//
-//		stub.startIntercepting()
-//
-//		deleteCache(from: sut)
-//
-//		expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
+		let stub = NSManagedObjectContext.alwaysFailingSaveStub()
+		let feed = uniqueImageFeed()
+		let timestamp = Date()
+		let sut = try makeSUT()
+
+		insert((feed, timestamp), to: sut)
+
+		stub.startIntercepting()
+
+		deleteCache(from: sut)
+
+		expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
 	}
 
 	func test_delete_removesAllObjects() throws {
-//		let store = try makeSUT()
-//
-//		insert((uniqueImageFeed(), Date()), to: store)
-//
-//		deleteCache(from: store)
-//
-//		let context = try NSPersistentContainer.load(
-//			name: CoreDataFeedStore.modelName,
-//			model: XCTUnwrap(CoreDataFeedStore.model),
-//			url: inMemoryStoreURL()
-//		).viewContext
-//
-//		let existingObjects = try context.allExistingObjects()
-//
-//		XCTAssertEqual(existingObjects, [], "found orphaned objects in Core Data")
+		let store = try makeSUT()
+
+		insert((uniqueImageFeed(), Date()), to: store)
+
+		deleteCache(from: store)
+
+		let context = try NSPersistentContainer.load(
+			name: CoreDataFeedStore.modelName,
+			model: XCTUnwrap(CoreDataFeedStore.model),
+			url: inMemoryStoreURL()
+		).viewContext
+
+		let existingObjects = try context.allExistingObjects()
+
+		XCTAssertEqual(existingObjects, [], "found orphaned objects in Core Data")
 	}
 
 	func test_storeSideEffects_runSerially() throws {
