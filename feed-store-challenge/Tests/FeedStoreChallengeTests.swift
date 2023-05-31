@@ -171,9 +171,9 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 
 	func test_storeSideEffects_runSerially() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatSideEffectsRunSerially(on: sut)
+		let sut = try makeSUT()
+
+		assertThatSideEffectsRunSerially(on: sut)
 	}
 
 	func test_imageEntity_properties() throws {
