@@ -177,18 +177,34 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	}
 
 	func test_imageEntity_properties() throws {
-//		let entity = try XCTUnwrap(
-//			CoreDataFeedStore.model?.entitiesByName["ENTER_YOUR_CORE_DATA_IMAGE_ENTITY_NAME"]
-//		)
-//
-//		// Instructions: update the attribute
-//		// names if they don't match the names
-//		// on your Core Data entity
-//
-//		entity.verify(attribute: "id", hasType: .UUIDAttributeType, isOptional: false)
-//		entity.verify(attribute: "imageDescription", hasType: .stringAttributeType, isOptional: true)
-//		entity.verify(attribute: "location", hasType: .stringAttributeType, isOptional: true)
-//		entity.verify(attribute: "url", hasType: .URIAttributeType, isOptional: false)
+		let entity = try XCTUnwrap(
+			CoreDataFeedStore.model?.entitiesByName["ManagedFeedImage"]
+		)
+
+		// Instructions: update the attribute
+		// names if they don't match the names
+		// on your Core Data entity
+
+		entity.verify(
+			attribute: "id",
+			hasType: .UUIDAttributeType,
+			isOptional: false
+		)
+		entity.verify(
+			attribute: "imageDescription",
+			hasType: .stringAttributeType,
+			isOptional: true
+		)
+		entity.verify(
+			attribute: "location",
+			hasType: .stringAttributeType,
+			isOptional: true
+		)
+		entity.verify(
+			attribute: "url",
+			hasType: .URIAttributeType,
+			isOptional: false
+		)
 	}
 
 	// - MARK: Helpers
