@@ -21,45 +21,45 @@ class FeedStoreChallengeTests: XCTestCase, FailableFeedStoreSpecs {
 	//  ***********************
 
 	func test_retrieve_deliversEmptyOnEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
 	}
 
 	func test_retrieve_hasNoSideEffectsOnEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
 	}
 
 	func test_retrieve_deliversFoundValuesOnNonEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
 	}
 
 	func test_retrieve_hasNoSideEffectsOnNonEmptyCache() throws {
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
+		let sut = try makeSUT()
+
+		assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
 	}
 
 	func test_retrieve_deliversFailureOnRetrievalError() throws {
-//		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
-//		stub.startIntercepting()
-//
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
+		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
+		stub.startIntercepting()
+
+		let sut = try makeSUT()
+
+		assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
 	}
 
 	func test_retrieve_hasNoSideEffectsOnFailure() throws {
-//		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
-//		stub.startIntercepting()
-//
-//		let sut = try makeSUT()
-//
-//		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
+		let stub = NSManagedObjectContext.alwaysFailingFetchStub()
+		stub.startIntercepting()
+
+		let sut = try makeSUT()
+
+		assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
 	}
 
 	func test_insert_deliversNoErrorOnEmptyCache() throws {
